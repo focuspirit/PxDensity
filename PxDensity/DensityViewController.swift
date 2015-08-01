@@ -105,7 +105,7 @@ class DensityViewController: UIViewController, UIGestureRecognizerDelegate, UITa
         
         let info = densityCalculator.getDesityInfoAtIndex(indexPath.row)
         if  info["type"] != nil {
-            cell.densityRatio.text =  info["ratio"]
+            cell.densityRatio.text = info["ratio"]
             cell.densityType.text = info["type"]
             cell.widthValue.text = info["width"]
             cell.heightValue.text = info["height"]
@@ -129,6 +129,10 @@ class DensityViewController: UIViewController, UIGestureRecognizerDelegate, UITa
         activeCellFrame = sender.frame
     }
 
+    @IBAction func resetButtonAction(sender: AnyObject) {
+        densityCalculator.calcNewTargetDensity(width: 240, height: 360, withIndex: 0)
+        self.tableView.reloadData()
+    }
     
 }
 
