@@ -1,10 +1,9 @@
 language: objective-c
 osx_image: xcode6.4
-xcode_project: PxDensity.xcodeproj
-xcode_scheme: PxDensity
+
 before_install: 
     - brew update
-    - brew install xctool
+    - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 
 script: 
     - xctool -project PxDensity.xcodeproj -scheme PxDensity -sdk iphonesimulator test
