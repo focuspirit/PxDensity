@@ -5,5 +5,5 @@ language: objective-c
 osx_image: xcode6.4
 
 script: 
-    - xcodebuild -project PxDensity.xcodeproj -scheme "PxDensity" -sdk iphonesimulator -configuration Debug -PBXBuildsContinueAfterErrors=0 ACTIVE_ARCH_ONLY=0 build test
+    - xcodebuild clean build test -project PxDensity.xcodeproj -scheme "PxDensity" -sdk iphonesimulator -configuration Debug -PBXBuildsContinueAfterErrors=0 ACTIVE_ARCH_ONLY=0
 
